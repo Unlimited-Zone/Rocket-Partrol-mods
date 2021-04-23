@@ -10,7 +10,7 @@ class bow2 extends Phaser.GameObjects.Sprite{
 
         this.isFiring = false;      //track bow firing status
         this.moveSpeed = 5;
-        this.firingSpeed = 20;
+        this.firingSpeed = 10;
 
         this.sfxRocket = scene.sound.add('sfx_rocket'); // add bow sfx
     }
