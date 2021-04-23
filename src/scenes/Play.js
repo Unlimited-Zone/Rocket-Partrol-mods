@@ -52,9 +52,9 @@ class Play extends Phaser.Scene {
           this.drone = new drone(this, 0,
             borderUISize*4, 'drone', 0, 30).setOrigin(0, 0);
        this.ship02 = new Spaceship(this, game.config.width + borderUISize*3,
-            borderUISize*5 - 5, 'target', 0, 20).setOrigin(0, 0);
+            borderUISize*5 + 13, 'target', 0, 20).setOrigin(0, 0);
        this.ship03 = new Spaceship(this, game.config.width,
-            borderUISize*6 + 17, 'target', 0, 10).setOrigin(0, 0);     
+            borderUISize*6 + 33, 'target', 0, 10).setOrigin(0, 0);     
         
         //white borders
         this.UI = this.add.tileSprite(0, 0, 640, 480, 'UI').setOrigin(0,0);
@@ -256,9 +256,9 @@ class Play extends Phaser.Scene {
 
     //p1 check ship
     checkCollision(rocket, ship){
-        if( rocket.x < ship.x + ship.width && 
+        if( rocket.x < ship.x + ship.width +100 && 
             rocket.x + rocket.width > ship.x &&
-            rocket.y < ship.y + ship.height &&
+            rocket.y < ship.y + ship.height  &&
             rocket.y + rocket.height > ship.y ){
             return true;
         }else{
@@ -283,10 +283,10 @@ class Play extends Phaser.Scene {
 
     //p2 check
     checkCollision(bow2, ship){
-        if( bow2.x < ship.x + ship.width && 
-            bow2.x + bow2.width > ship.x &&
-            bow2.y < ship.y + ship.height &&
-            bow2.y + bow2.height > ship.y ){
+        if( bow2.x < ship.x + ship.width - 40 && 
+            bow2.x + bow2.width > ship.x + 20 &&
+            bow2.y < ship.y + ship.height - 20 &&
+            bow2.y + bow2.height > ship.y + 20 ){
             return true;
         }else{
             return false;
